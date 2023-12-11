@@ -1,0 +1,40 @@
+/* webpageStyle.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: blue;
+    color: white;
+    margin: 20px;
+}
+
+h1 {
+	color: black;
+	font-size:30px;
+	font-family: Arial, sans-serif;	
+}
+
+p {
+	font-size: 20px;
+	color: black;
+	font-family: Arial, sans-serif;
+}
+
+button {
+	background-color: lightblue;
+	color: black;
+	padding: 10px 14px;
+	font-size: 12px;
+	border: 1px solid black;
+	font-family: Arial, sans-serif;
+}
+
+.custom-image {
+	width: 100%;
+	max-width: 300px;
+	height: auto;
+}
+
+.center-horizontal {
+	width: fit-content;
+	margin: auto;
+}

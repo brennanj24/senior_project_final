@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/webpageStyle.css">
+    <title>Run sca Command</title>
+</head>
+<body>
+<div class="center-horizontal">
+	<img src="fredonia.jpg" alt="Logo" class="cutom-image">
+</div>
+
+<div class="center-horizontal">
+	<h1>SCA Tool</h1>
+</div>
+
+
+<div class="center-horizontal">
+	<p>Please submit your code below.</p>
+</div>
+
+<div class="center-horizontal">
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <label for="fileInput">Select a file:</label>
+    <input type="file" id="fileInput" name="fileInput">
+    <button type="submit">Upload File</button>
+</form>
+
+</div>
+
+    <script src="app.js"></script>
+
+<div class="center-horizontal">
+	 <button onclick="runSca()">Run sca Command</button>
+   </div>
+ <div id="output"></div>
+ 
+    <script>
+        function runSca() {
+            fetch('http://34.162.169.186:3000/run-sca', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ command: '/SCA/SCA/core/src/a.out' }),
+            })
+            .then(response => response.text())
+            .then(output => {
+                document.getElementById('output').innerText = output;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+<div class="center-horizontal">
+<button onclick="openFile()">Open File</button>
+</div>
+
+ <script>
+        function openFile() {
+            const filePath = '/SCA/SCA/user/output/secondHello.html';
+            window.open(filePath, '_blank');
+        }
+    </script>
+
+</body>
+</html>
+
